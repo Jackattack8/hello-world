@@ -920,9 +920,7 @@ function updateMsgCounter(count) {
 }
 
 let msgCounter = 0;
-function addMessage
-
-  function let msgCounter = 0; function addMessage(role, content, isHtml = false) {
+function addMessage(role, content, isHtml = false) {
     const id = 'msg-' + (++msgCounter);
     const msgs = document.getElementById('aiMessages');
     const div = document.createElement('div');
