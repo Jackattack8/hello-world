@@ -666,7 +666,7 @@
       <div class="ai-dot"></div>
       <div>
         <div class="ai-title">AI Supply Chain Assistant</div>
-        <div class="ai-subtitle">Ask anything about this week's data</div>
+        <div class="ai-subtitle">Ask anything about this week's data</div> <div id="msgCounter" style="font-size:10px;color:var(--text3);margin-top:2px;">10 messages remaining</div>
       </div>
     </div>
 
@@ -701,7 +701,7 @@
     btn.classList.add('active');
   }
 
-  window.onload = () => { checkApiKey(); colorMABDCells(); };
+  window.onload = () => {   checkApiKey();   colorMABDCells();   const existing = parseInt(sessionStorage.getItem('msgCount') || '0');   updateMsgCounter(existing);   if (existing >= MAX_MESSAGES) showLimitMessage(); };
   function checkApiKey() {
     const key = document.getElementById('apiKeyInput').value.trim();
     document.getElementById('apiStatus').className = 'api-status' + (key.length > 10 ? ' active' : '');
@@ -919,7 +919,7 @@ function updateMsgCounter(count) {
   counter.style.color = remaining <= 3 ? 'var(--red)' : 'var(--text3)';
 let msgCounter = 0;
 
-  function addMessage(role, content, isHtml = false) {
+  function let msgCounter = 0; function addMessage(role, content, isHtml = false) {
     const id = 'msg-' + (++msgCounter);
     const msgs = document.getElementById('aiMessages');
     const div = document.createElement('div');
