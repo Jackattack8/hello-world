@@ -917,7 +917,7 @@ function updateMsgCounter(count) {
   const remaining = MAX_MESSAGES - count;
   counter.textContent = remaining + ' message' + (remaining === 1 ? '' : 's') + ' remaining';
   counter.style.color = remaining <= 3 ? 'var(--red)' : 'var(--text3)';
-}
+let msgCounter = 0;
 
   function addMessage(role, content, isHtml = false) {
     const id = 'msg-' + (++msgCounter);
