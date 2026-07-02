@@ -916,7 +916,7 @@ function updateMsgCounter(count) {
   if (!counter) return;
   const remaining = MAX_MESSAGES - count;
   counter.textContent = remaining + ' message' + (remaining === 1 ? '' : 's') + ' remaining';
-  counter.style.color = remaining <= 3 ? 'var(--red)' : 'var(--text3)';
+  counter.style.color = remaining <= 4 ? '#ff4444' : remaining <= 6 ? '#f59e0b' : '#ffffff'; counter.style.fontSize = '12px'; counter.style.fontWeight = '600';
 }
 
 let msgCounter = 0;
